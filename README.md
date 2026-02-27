@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+O que foi desenvolvido
+Para esta entrega, decidi seguir uma abordagem de Clean Architecture e Modularização, separando as responsabilidades para facilitar a manutenção e escalabilidade do código — práticas essenciais para o desenvolvimento de software profissional.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Estrutura do Projeto
+interfaces.ts: Centralização de todos os contratos (Interfaces e Types). Aqui defini modelos como Produto, Aluno e o tipo genérico ApiResponse<T>.
 
-## Available Scripts
+exercicios-utils.ts: Funções de utilidade contendo a lógica dos exercícios 1 a 8, incluindo cálculos de IMC e conversores de temperatura.
 
-In the project directory, you can run:
+api-service.ts: Implementação do Exercício 9, simulando uma resposta de API com dados mockados de usuários.
 
-### `npm start`
+ListaTarefas.tsx: Componente React (Exercício 10) que gerencia o estado de filtros usando tipos literais e renderização condicional.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+🛠️ Conceitos Aplicados
+Durante o desenvolvimento, apliquei conceitos fundamentais de TypeScript solicitados em aula:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Generics (<T>): Utilizados no contador de ocorrências e na resposta da API para permitir que as estruturas sejam reutilizáveis com diferentes tipos de dados.
 
-### `npm test`
+Props e Desestruturação: No componente CardProduto, utilizei a sintaxe de desestruturação de Props para um código mais limpo.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Renderização Condicional: Aplicação do operador short-circuit (&&) para exibir descrições opcionais e operador ternário para status de estoque.
 
-### `npm run build`
+Tipagem Estrita de Estados: O useState no componente de tarefas foi limitado aos valores "todas" | "pendentes" | "concluidas", garantindo que o filtro nunca receba um valor inválido.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+✅ Validação Técnica
+O código foi validado seguindo o roteiro da atividade:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Execução do comando npx tsc --noEmit para garantir que não existem erros de tipagem no projeto.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Resolução do erro TS6133 (variáveis declaradas mas não lidas), garantindo um código limpo e sem warnings.
 
-### `npm run eject`
+Organização da pasta exercicios dentro de src/ para correta compilação pelo Webpack/Babel.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Grupo: Gabriel Correa, Lucas Lellis e Hannah
